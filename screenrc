@@ -1,0 +1,19 @@
+# keep plenty of scrollback
+defscrollback  4096
+defutf8 on
+shell $SHELL
+
+# do not intercept ESC. It makes vim teh sux, which vim is not
+defc1 off
+maptimeout 0
+
+# look & feel
+activity   "Activity in window %n (%t)"
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{= Kd} %=  %-Lw%{= wk}%n%f %t %{= Kd}%+Lw %=  %D %d %M %Y %c:%s%{-}"
+#                  [C----] [L] [I---------------------------] [R] [T------------------]
+
+# default windows
+screen -t "irc" ssh -t irchost.cat.pdx.edu screen -r weechat
+screen -t "logwatch"
