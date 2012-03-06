@@ -15,8 +15,8 @@ setopt transient_rprompt
 setopt appendhistory
 
 autoload -Uz vcs_info
-autoload colors
-colors
+autoload -U compinit; compinit
+autoload colors; colors
 
 bindkey -v
 
