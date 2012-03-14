@@ -28,29 +28,31 @@ typeset -ga preexec_functions
 #=============================================================================
 # VARIABLES
 #=============================================================================
-CAPTION=`hostname | sed 's/\..*//'`
-HISTFILE=$HOME/.zsh/history
-HISTSIZE=1000
-SAVEHIST=1000
-BLOCKSIZE=K
-EDITOR=vim
-PAGER=less
-CLICOLOR="YES"
-LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
-
-GEM_HOME=$HOME/local/lib/ruby/gems/1.8
-GEM_PATH=$GEMPATH:$HOME/local/lib/ruby/gems/1.8:/usr/local/lib/ruby/gems/1.8
-GEM_PATH=$GEMPATH:/usr/local/lib/ruby/gems/1.8
-GEM_PATH=$GEMPATH:/var/lib/gems/1.8
 
 # set some colors
 for COLOR in RED GREEN BLUE YELLOW WHITE BLACK CYAN; do
     eval PR_$COLOR='%{$fg[${(L)COLOR}]%}'
     eval PR_BRIGHT_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
 done
+
 PR_RST="%{${reset_color}%}"
 PR_RESET="%{%b%s%u$reset_color%}"
 PR_BG="%{%(?.$PR_RESET.%S)%}"
+
+CAPTION=`hostname | sed 's/\..*//'`
+
+export HISTFILE=$HOME/.zsh/history
+export HISTSIZE=1000
+export SAVEHIST=1000
+export BLOCKSIZE=K
+export EDITOR=vim
+export PAGER=less
+export CLICOLOR="YES"
+export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
+export GEM_HOME=$HOME/local/lib/ruby/gems/1.8
+export GEM_PATH=$HOME/local/lib/ruby/gems/1.8:/usr/local/lib/ruby/gems/1.8
+export GEM_PATH=$GEM_PATH:/usr/local/lib/ruby/gems/1.8
+export GEM_PATH=$GEM_PATH:/var/lib/gems/1.8
 
 
 #=============================================================================
@@ -61,6 +63,8 @@ alias homegit="git --git-dir=$HOME/.homegit --work-tree=$HOME"
 alias sshadd='eval `loadkey`'
 alias ldapvi="ldapvi -D uid=marut,ou=People,dc=catnip -h ldap.cat.pdx.edu"
 alias dater="date '+%Y/%m/%d %H:%M:%S %Z'"
+alias cdp="cd $HOME/cat/repos/puppet"
+alias cdv="cd $HOME/cat/repos/theverse"
 
 
 #=============================================================================
