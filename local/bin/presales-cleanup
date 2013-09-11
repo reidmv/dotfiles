@@ -1,0 +1,18 @@
+#!/bin/sh
+
+SEDFILE=`mktemp /tmp/presales-XXXXXXXX`
+cat <<EOF > "$SEDFILE"
+/^ *\*\* ?\*\*$/d
+s/\*\* ?\*\*//g
+s/\*\*([0-9]*)[).] *\*\*/\1. /
+s/(---* Forwarded message ---*)/\1  /
+s/^(From: .*)/\1  /
+s/^(Date: .*)/\1  /
+s/^(Subject: .*)/\1  /
+s/^(To: .*)/\1  /
+s/^\*([a-zA-Z ]*)\*:(.*)/\1:\2  /
+EOF
+
+pbpaste | sed -E -f "$SEDFILE" | pbcopy
+
+rm "$SEDFILE"
