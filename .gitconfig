@@ -1,0 +1,20 @@
+[alias]
+  co = checkout
+  st = status --ignore-submodules=dirty
+  lg = "log --pretty=format:'%C(yellow)%h%C(reset) %C(blue)%an%C(reset) %C(cyan)%cr%C(reset) %s %C(green)%d%C(reset)' --graph"
+  wtc = !git commit -a -m \"`/usr/bin/lynx -dump -nolist whatthecommit.com | sed -e 's/^\\s*//' -e '/^\\[permalink\\]$/d' -e '/^$/d'`\"
+  sub = submodule
+  glog = log --pretty=oneline --graph
+  sgrep = "!f() { git grep \"$1\"; git submodule foreach \"git grep '$1'; true\" | grep -B 1 \"$1\"; }; f"
+  submaster = "!ls -d modules/*/* data/* manifests | parallel -j24 'cd {}; git checkout master; git pull origin master'"
+[color]
+  interactive = auto
+  status = auto
+  log = auto
+  branch = auto
+  diff = auto
+[user]
+  name = Reid Vandewiele
+  email = reid@puppetlabs.com
+[push]
+  default = current
