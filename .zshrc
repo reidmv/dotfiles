@@ -232,9 +232,5 @@ precmd_functions+='zsh_prompt_set_rprompt'
 lprompt '[]' $PR_BRIGHT_WHITE $PR_WHITE
 zsh_prompt_set_rprompt
 
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-source /Users/reid/.rvm/scripts/rvm
-
-# added by travis gem
-source /Users/reid/.travis/travis.sh
+# RVM
+[ -e "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
