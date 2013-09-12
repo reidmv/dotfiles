@@ -1,0 +1,3 @@
+#!/bin/sh
+
+GIT_WORK_TREE="${HOME}" GIT_DIR="${HOME}/.dotfiles_git" git "$@"
