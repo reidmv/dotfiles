@@ -2,7 +2,9 @@
 
 execute pathogen#infect()
 syntax on
+
 filetype plugin indent on
+au BufRead,BufNewFile Vagrantfile setlocal ft=ruby
 
 set tabstop=2
 set shiftwidth=2
