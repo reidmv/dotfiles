@@ -59,6 +59,7 @@ export ENVPUPPET_BASEDIR=$HOME/repos
 export RUBYLIB=$HOME/.puppet/modules/stack_builder/lib:$RUBYLIB
 export RUBYLIB=$HOME/.puppet/modules/cloud_provisioner/lib:$RUBYLIB
 export RUBYLIB=$HOME/.puppet/modules/cloud_provisioner_vmware/lib:$RUBYLIB
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 #source $HOME/.rvm/scripts/rvm
 
 
