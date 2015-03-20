@@ -67,8 +67,8 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # ALIASES
 #=============================================================================
 [ `uname` = "Linux" ] && alias ls='ls --color'
-alias vagrant="vagrant_suppress_expected_warnings"
-alias puppet="puppet_suppress_iconv_warnings"
+#alias vagrant="vagrant_suppress_expected_warnings"
+#alias puppet="puppet_suppress_iconv_warnings"
 alias tmux="tmux -2"
 
 

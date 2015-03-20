@@ -20,3 +20,5 @@
   email = reid@puppetlabs.com
 [push]
   default = current
+[core]
+	excludesfile = /Users/reidmv/.gitexcludes
