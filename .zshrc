@@ -1,6 +1,13 @@
 #!/usr/bin/zsh
 
 #=============================================================================
+# Notes
+#=============================================================================
+#
+# This command can be used to re-enable the camera after it dies on suspend
+#   sudo killall AppleCameraAssistant;sudo killall VDCAssistant
+
+#=============================================================================
 # ENVIRONMENT-SPECIFIC STUFF
 #=============================================================================
 #[ -e "/pkgs/pkgs/PKGSsh" ] && . "/pkgs/pkgs/PKGSsh"
@@ -56,11 +63,7 @@ export PAGER=less
 export CLICOLOR="YES"
 export LSCOLORS="ExGxFxdxCxDxDxhbadExEx"
 export ENVPUPPET_BASEDIR=$HOME/repos
-export RUBYLIB=$HOME/.puppet/modules/stack_builder/lib:$RUBYLIB
-export RUBYLIB=$HOME/.puppet/modules/cloud_provisioner/lib:$RUBYLIB
-export RUBYLIB=$HOME/.puppet/modules/cloud_provisioner_vmware/lib:$RUBYLIB
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
-#source $HOME/.rvm/scripts/rvm
 
 
 #=============================================================================
@@ -70,6 +73,7 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 #alias vagrant="vagrant_suppress_expected_warnings"
 #alias puppet="puppet_suppress_iconv_warnings"
 alias tmux="tmux -2"
+alias be="bundle exec"
 
 
 #=============================================================================
@@ -104,11 +108,6 @@ function puppet_suppress_iconv_warnings {
 #=============================================================================
 # PATH
 #=============================================================================
-PATH=/usr/local/bin:$PATH
-PATH=$PATH:$HOME/local/bin:/local/sbin       # Add local bindirs
-PATH=$PATH:/cat/bin                          # CAT environment bindir
-PATH=$PATH:$HOME/local/lib/ruby/gems/1.8/bin # Local rubygem bindir
-PATH=$PATH:$HOME/google-cloud-sdk/bin        # Google Cloud SDK
 
 
 #=============================================================================
@@ -240,5 +239,9 @@ precmd_functions+='zsh_prompt_set_rprompt'
 lprompt '[]' $PR_BRIGHT_WHITE $PR_WHITE
 zsh_prompt_set_rprompt
 
+# added by travis gem
+[ -f /Users/reidmv/.travis/travis.sh ] && source /Users/reidmv/.travis/travis.sh
+
 # RVM
-[ -e "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm"
+[ -e "/usr/local/rvm" ] && source "/usr/local/rvm/scripts/rvm"
+
