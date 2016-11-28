@@ -248,5 +248,8 @@ zsh_prompt_set_rprompt
 [ -f /Users/reidmv/.travis/travis.sh ] && source /Users/reidmv/.travis/travis.sh
 
 # RVM
-[ -e "/usr/local/rvm" ] && source "/usr/local/rvm/scripts/rvm"
-
+#[ -e "/usr/local/rvm" ] && source "/usr/local/rvm/scripts/rvm"
+#
+#  * To start using RVM you need to run `source /Users/reidmv/.rvm/scripts/rvm`
+#      in all your open shell windows, in rare cases you need to reopen all shell windows.
+#
