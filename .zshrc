@@ -79,6 +79,7 @@ fi
 #alias puppet="puppet_suppress_iconv_warnings"
 alias tmux="tmux -2"
 alias be="bundle exec"
+alias fixwebcam="sudo killall AppleCameraAssistant;sudo killall VDCAssistant"
 
 
 #=============================================================================
@@ -252,4 +253,6 @@ zsh_prompt_set_rprompt
 #
 #  * To start using RVM you need to run `source /Users/reidmv/.rvm/scripts/rvm`
 #      in all your open shell windows, in rare cases you need to reopen all shell windows.
-#
+source /Users/reidmv/.rvm/scripts/rvm
+#set +m; { rvm use system >/dev/null & wait; set -m; } &
+rvm use system
