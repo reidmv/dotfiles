@@ -80,6 +80,8 @@ fi
 alias tmux="tmux -2"
 alias be="bundle exec"
 alias fixwebcam="sudo killall AppleCameraAssistant;sudo killall VDCAssistant"
+alias webcam-manual-exposure='uvcc --vendor 0x46d --product 0x82c set autoExposureMode 1; uvcc --vendor 0x46d --product 0x82c set absoluteExposureTime 160'
+alias webcam-auto-exposure='uvcc --vendor 0x46d --product 0x82c set autoExposureMode 8'
 
 
 #=============================================================================

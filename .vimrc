@@ -29,5 +29,7 @@ highlight link LineNr SignColumn
 let g:airline_powerline_fonts=1
 let g:puppet_align_hashes=1
 
+runtime macros/matchit.vim
+
 command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
 command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
