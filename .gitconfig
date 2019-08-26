@@ -17,7 +17,7 @@
   diff = auto
 [user]
   name = Reid Vandewiele
-  email = reid@puppetlabs.com
+  email = reid@puppet.com
 [push]
   default = current
 [core]
