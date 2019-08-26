@@ -20,6 +20,7 @@ set autoindent
 set ruler
 set laststatus=2
 set number
+set modeline
 
 " let g:gitgutter_sign_column_always=1
 
